@@ -1,0 +1,19 @@
+{
+  "name": "Portfolio Eric Adia Kore",
+  "short_name": "Eric Adia Kore",
+  "description": "Portfolio officiel d'Eric Adia Kore, développeur Full Stack spécialisé en React, Django, Python et PostgreSQL.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "orientation": "portrait-primary",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

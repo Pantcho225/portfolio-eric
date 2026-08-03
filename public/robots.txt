@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://portfolio-eric-five.vercel.app/sitemap.xml
