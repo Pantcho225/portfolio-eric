@@ -111,6 +111,10 @@ const Contact = () => {
       import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 
 
+    const CONFIRM_TEMPLATE_ID =
+      import.meta.env.VITE_EMAILJS_TEMPLATE_CONFIRM_ID;
+
+
     const PUBLIC_KEY =
       import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
@@ -240,6 +244,44 @@ const Contact = () => {
       console.log(
         "Réponse EmailJS :",
         response
+      );
+
+
+      /*
+      ===================================
+      EMAIL DE CONFIRMATION VISITEUR
+      ===================================
+      */
+
+
+      await emailjs.send(
+
+        SERVICE_ID,
+
+        CONFIRM_TEMPLATE_ID,
+
+        {
+
+          from_name:
+          formData.name,
+
+
+          from_email:
+          formData.email,
+
+
+          message:
+          formData.message,
+
+        },
+
+        PUBLIC_KEY
+
+      );
+
+
+      console.log(
+        "Confirmation visiteur envoyée."
       );
 
 
