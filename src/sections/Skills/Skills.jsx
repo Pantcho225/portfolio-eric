@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { Code2, Database, Server, Wrench } from "lucide-react"
+import { Code2, Database, Server, Wrench, Layers } from "lucide-react"
 
 import Container from "../../components/common/Container"
 import SectionTitle from "../../components/common/SectionTitle"
@@ -11,6 +11,7 @@ import { skills } from "../../data/skills"
 const icons = {
   Frontend: Code2,
   Backend: Server,
+  "Concepts & Architecture": Layers,
   "Base de données": Database,
   Outils: Wrench
 }
