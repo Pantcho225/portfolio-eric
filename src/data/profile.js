@@ -1,16 +1,12 @@
 export const profile = {
-
   name: "Eric Adia Kore",
 
-  greeting:
-    "Bonjour 👋 Je suis",
+  greeting: "Bonjour 👋 Je suis",
 
-  title:
-    "Développeur Full Stack",
+  title: "Développeur Full Stack",
 
   description:
     "Je conçois des applications web modernes, performantes et évolutives en transformant des besoins métiers en solutions numériques.",
-
 
   stack: [
     "Python",
@@ -19,8 +15,5 @@ export const profile = {
     "PostgreSQL"
   ],
 
-
-  cv:
-    "/cv/eric-adia-kore-cv.pdf"
-
+  cv: "/cv-eric-adia-kore.pdf"
 }

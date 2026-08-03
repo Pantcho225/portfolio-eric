@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 import { navigation } from "../../data/navigation";
+import { profile } from "../../data/profile";
 import Button from "../common/Button";
 
 const Navbar = () => {
@@ -36,18 +37,11 @@ const Navbar = () => {
           lg:px-8
         "
       >
-        {/* ========================= */}
         {/* Logo */}
-        {/* ========================= */}
 
         <a
           href="#accueil"
-          className="
-            group
-            flex
-            items-center
-            gap-3
-          "
+          className="group flex items-center gap-3"
         >
           <div
             className="
@@ -86,9 +80,7 @@ const Navbar = () => {
           </div>
         </a>
 
-        {/* ========================= */}
         {/* Navigation Desktop */}
-        {/* ========================= */}
 
         <div className="hidden items-center gap-10 md:flex">
           {navigation.map((item) => (
@@ -104,7 +96,6 @@ const Navbar = () => {
                 transition-all
                 duration-300
                 hover:text-white
-
                 after:absolute
                 after:left-0
                 after:-bottom-2
@@ -114,7 +105,6 @@ const Navbar = () => {
                 after:bg-blue-500
                 after:transition-all
                 after:duration-300
-
                 hover:after:w-full
               "
             >
@@ -123,30 +113,26 @@ const Navbar = () => {
           ))}
 
           <Button
-            href="/public/cv-eric-adia-kore.pdf"
+            href={profile.cv}
             download
             className="
-    rounded-2xl
-    bg-gradient-to-r
-    from-blue-600
-    to-blue-500
-    px-6
-    py-3
-    shadow-lg
-    shadow-blue-600/30
-    transition-all
-    duration-300
-    hover:-translate-y-1
-    hover:shadow-blue-500/40
+              rounded-2xl
+              bg-gradient-to-r
+              from-blue-600
+              to-blue-500
+              px-6
+              py-3
+              shadow-lg
+              shadow-blue-600/30
+              hover:-translate-y-1
+              hover:shadow-blue-500/40
             "
           >
             Télécharger CV
           </Button>
         </div>
 
-        {/* ========================= */}
         {/* Bouton Mobile */}
-        {/* ========================= */}
 
         <div className="md:hidden">
           <button
@@ -168,28 +154,15 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* ========================= */}
       {/* Menu Mobile */}
-      {/* ========================= */}
 
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{
-              opacity: 0,
-              y: -20,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            exit={{
-              opacity: 0,
-              y: -20,
-            }}
-            transition={{
-              duration: 0.25,
-            }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.25 }}
             className="
               md:hidden
               border-t
@@ -224,8 +197,11 @@ const Navbar = () => {
               ))}
 
               <Button
+                href={profile.cv}
+                download
+                fullWidth
+                onClick={() => setIsOpen(false)}
                 className="
-                  w-full
                   justify-center
                   rounded-2xl
                   bg-gradient-to-r
