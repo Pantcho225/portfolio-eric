@@ -21,6 +21,16 @@ export const skills = [
   },
 
   {
+    category: "Concepts & Architecture",
+    items: [
+      "Programmation Orientée Objet (POO)",
+      "Architecture MVC / MVT",
+      "Conception d'applications évolutives",
+      "Bonnes pratiques de développement"
+    ]
+  },
+
+  {
     category: "Base de données",
     items: [
       "PostgreSQL",
