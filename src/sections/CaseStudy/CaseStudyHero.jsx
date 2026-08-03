@@ -176,14 +176,12 @@ const CaseStudyHero = () => {
           "
         >
           <img
-            src="/images/projects/dashboard-copropriete.png"
+            src="/images/projects/dashboard-copropriete.webp"
             alt="Dashboard SaaS Copropriété"
-            className="
-              w-full
-              transition-transform
-              duration-700
-              hover:scale-105
-            "
+            width={1200}
+            height={630}
+            loading="lazy"
+            className="..."
           />
         </div>
       </motion.div>

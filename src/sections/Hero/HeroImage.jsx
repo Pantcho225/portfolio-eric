@@ -62,14 +62,14 @@ const HeroImage = () => {
         "
       >
         <img
-          src="/images/profile/ERIC.png"
-          alt="Eric Adia Kore"
-          className="
-            h-[520px]
-            w-[380px]
-            rounded-2xl
-            object-cover
-          "
+          src="/images/profile/ERIC.webp"
+          alt="Eric Adia Kore - Développeur Full Stack"
+          width={600}
+          height={800}
+          loading="eager"
+          className="..."
+            
+          
         />
       </motion.div>
 
