@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { trackContactSubmit, trackCVDownload, trackGithubClick, trackEmailClick, trackPhoneClick } from "../../utils/analytics";
 
 import {
   Mail,
@@ -82,6 +83,8 @@ const Contact = () => {
       !formData.message
     ) {
 
+
+      trackContactSubmit();
 
       setStatus({
 
@@ -448,6 +451,7 @@ const Contact = () => {
 
               <a
                 href="mailto:adia.kore@uvci.edu.ci"
+                onClick={trackEmailClick}
                 className="
                   flex
                   items-center
@@ -469,6 +473,7 @@ const Contact = () => {
 
               <a
                 href="tel:+2250749004853"
+                onClick={trackPhoneClick}
                 className="
                   flex
                   items-center
@@ -490,6 +495,7 @@ const Contact = () => {
 
               <a
                 href="tel:+2250172602559"
+                onClick={trackPhoneClick}
                 className="
                   flex
                   items-center
@@ -536,6 +542,7 @@ const Contact = () => {
 
               <a
                 href="https://github.com/Pantcho225"
+                onClick={trackGithubClick}
                 target="_blank"
                 rel="noreferrer"
                 className="
@@ -564,6 +571,7 @@ const Contact = () => {
 
               <a
                 href="/cv-eric-adia-kore.pdf"
+                onClick={trackCVDownload}
                 download
                 className="
                   inline-flex

@@ -1,5 +1,6 @@
 import { ChevronUp, Heart, Mail, MapPin } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
+import { trackGithubClick, trackEmailClick } from "../../utils/analytics";
 
 const Footer = () => {
   return (
@@ -78,6 +79,7 @@ const Footer = () => {
 
               <a
                 href="mailto:adia.kore@uvci.edu.ci"
+                onClick={trackEmailClick}
                 className="flex items-center gap-3 text-slate-400 transition hover:text-blue-400"
               >
                 <Mail size={18} />
@@ -91,6 +93,7 @@ const Footer = () => {
 
               <a
                 href="https://github.com/Pantcho225"
+                onClick={trackGithubClick}
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-3 text-slate-400 transition hover:text-blue-400"

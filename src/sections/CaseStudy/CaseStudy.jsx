@@ -1,5 +1,6 @@
 import Container from "../../components/common/Container";
 import SectionTitle from "../../components/common/SectionTitle";
+import { trackCaseStudyView } from "../../utils/analytics";
 
 import CaseStudyHero from "./CaseStudyHero";
 import CaseStudyGallery from "./CaseStudyGallery";
@@ -9,6 +10,8 @@ import CaseStudyStats from "./CaseStudyStats";
 import CaseStudyTimeline from "./CaseStudyTimeline";
 
 const CaseStudy = () => {
+
+  trackCaseStudyView();
   return (
     <section
       id="etude-de-cas"

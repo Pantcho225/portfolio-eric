@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import HeroStats from "../../components/hero/HeroStats";
 import { profile } from "../../data/profile";
+import { trackCVDownload } from "../../utils/analytics";
 
 const HeroContent = () => {
   return (
@@ -34,6 +35,7 @@ const HeroContent = () => {
 
       <div className="mt-10 flex flex-wrap gap-4">
         <a
+          onClick={trackCVDownload}
           href="#projets"
           className="
             rounded-xl
