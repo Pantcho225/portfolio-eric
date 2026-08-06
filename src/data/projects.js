@@ -14,7 +14,7 @@ export const projects = [
 
     duration: "Développement sur plusieurs mois",
 
-    image: "/images/copropriete.png",
+    image: "/images/projects/dashboard-copropriete.webp",
 
     shortDescription:
       "Plateforme SaaS professionnelle développée pour digitaliser la gestion des copropriétés.",
@@ -73,7 +73,7 @@ export const projects = [
 
     duration: "Projet personnel",
 
-    image: "/images/importiq.png",
+    image: null,
 
     shortDescription:
       "Plateforme intelligente destinée aux importateurs.",

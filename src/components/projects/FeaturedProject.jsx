@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { ImageOff } from "lucide-react";
 import {
   FaCheckCircle,
   FaStar,
@@ -12,11 +14,15 @@ import ProjectBadges from "./ProjectBadges";
 import ProjectActions from "./ProjectActions";
 
 const FeaturedProject = ({ project }) => {
+  const [hasImageError, setHasImageError] = useState(false);
   if (!project) return null;
+
+  const showImage = project.image && !hasImageError;
 
   return (
     <motion.article
       initial={{ opacity: 0, y: 40 }}
+
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
@@ -37,24 +43,32 @@ const FeaturedProject = ({ project }) => {
 
         <div className="relative overflow-hidden bg-slate-950">
 
-          <img
-            src={project.image}
-            alt={project.title}
-            loading="lazy"
-            onError={(e) => {
-              e.currentTarget.src =
-                "/images/project-placeholder.png";
-            }}
-            className="
-              h-full
-              min-h-[420px]
-              w-full
-              object-cover
-              transition
-              duration-700
-              group-hover:scale-105
-            "
-          />
+          {showImage ? (
+            <img
+              src={project.image}
+              alt={project.title}
+              loading="lazy"
+              onError={() => setHasImageError(true)}
+              className="
+                h-full
+                min-h-[420px]
+                w-full
+                object-cover
+                transition
+                duration-700
+                group-hover:scale-105
+              "
+            />
+          ) : (
+            <div className="flex min-h-[420px] items-center justify-center bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950 p-8 text-center">
+              <div>
+                <ImageOff className="mx-auto text-blue-400" size={48} aria-hidden="true" />
+                <p className="mt-4 text-lg font-semibold text-white">
+                  Aperçu bientôt disponible
+                </p>
+              </div>
+            </div>
+          )}
 
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
 

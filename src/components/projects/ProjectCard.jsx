@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 import {
@@ -5,15 +6,19 @@ import {
   CheckCircle2,
   ArrowRight,
   ExternalLink,
-  
+  ImageOff,
 } from "lucide-react";
 
 import Badge from "../common/Badge";
 
 const ProjectCard = ({ project }) => {
+  const [hasImageError, setHasImageError] = useState(false);
+  const showImage = project.image && !hasImageError;
+
   return (
     <motion.article
       whileHover={{
+
         y: -8,
       }}
       transition={{
@@ -32,18 +37,30 @@ const ProjectCard = ({ project }) => {
       {/* Image */}
 
       <div className="relative overflow-hidden">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="
-            h-72
-            w-full
-            object-cover
-            transition
-            duration-700
-            hover:scale-105
-          "
-        />
+        {showImage ? (
+          <img
+            src={project.image}
+            alt={project.title}
+            onError={() => setHasImageError(true)}
+            className="
+              h-72
+              w-full
+              object-cover
+              transition
+              duration-700
+              hover:scale-105
+            "
+          />
+        ) : (
+          <div className="flex h-72 items-center justify-center bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950 p-8 text-center">
+            <div>
+              <ImageOff className="mx-auto text-blue-400" size={40} aria-hidden="true" />
+              <p className="mt-4 font-semibold text-white">
+                Aperçu bientôt disponible
+              </p>
+            </div>
+          </div>
+        )}
 
         <div
           className="
