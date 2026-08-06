@@ -1,14 +1,13 @@
 import { motion } from "framer-motion";
 
-import {
-  FaReact,
-  FaPython
-} from "react-icons/fa";
+import { FaReact } from "react-icons/fa";
+import { SiDjango, SiPostgresql } from "react-icons/si";
 
-import {
-  SiDjango,
-  SiPostgresql
-} from "react-icons/si";
+const architecture = [
+  { title: "Interface", detail: "React", Icon: FaReact, color: "text-cyan-400" },
+  { title: "API & logique métier", detail: "Django / Python", Icon: SiDjango, color: "text-green-400" },
+  { title: "Données", detail: "PostgreSQL", Icon: SiPostgresql, color: "text-blue-400" },
+];
 
 const HeroImage = () => {
   return (
@@ -39,8 +38,6 @@ const HeroImage = () => {
         "
       />
 
-      {/* Carte photo */}
-
       <motion.div
         whileHover={{
           y: -8,
@@ -51,12 +48,14 @@ const HeroImage = () => {
         }}
         className="
           relative
+          w-full
+          max-w-md
           overflow-hidden
           rounded-3xl
           border
           border-white/10
           bg-slate-900/60
-          p-3
+          p-2
           shadow-2xl
           backdrop-blur
         "
@@ -67,91 +66,51 @@ const HeroImage = () => {
           width={600}
           height={800}
           loading="eager"
-          className="..."
-            
-          
+          className="h-[440px] w-full object-cover object-top sm:h-[520px]"
         />
       </motion.div>
 
-      {/* React */}
-
       <motion.div
-        animate={{
-          y: [0, -12, 0]
-        }}
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{
-          duration: 3,
-          repeat: Infinity
+          delay: 0.35,
+          duration: 0.6,
         }}
         className="
-          absolute
-          right-4
-          top-10
-          rounded-2xl
+          relative
+          -mt-20
+          mr-0
+          w-[92%]
+          max-w-md
+          rounded-3xl
           border
           border-white/10
           bg-slate-900/90
-          p-4
-          text-3xl
-          shadow-xl
+          p-6
+          shadow-2xl
+          backdrop-blur
         "
       >
-        <FaReact className="text-cyan-400" />
-      </motion.div>
-
-      {/* Python */}
-
-      <motion.div
-        animate={{
-          y: [0, 12, 0]
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity
-        }}
-        className="
-          absolute
-          bottom-28
-          left-0
-          rounded-2xl
-          border
-          border-white/10
-          bg-slate-900/90
-          p-4
-          text-3xl
-          shadow-xl
-        "
-      >
-        <FaPython className="text-yellow-400" />
-      </motion.div>
-
-      {/* Django + PostgreSQL */}
-
-      <motion.div
-        animate={{
-          y: [0, -8, 0]
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity
-        }}
-        className="
-          absolute
-          bottom-6
-          right-8
-          flex
-          gap-4
-          rounded-2xl
-          border
-          border-white/10
-          bg-slate-900/90
-          p-4
-          text-2xl
-          shadow-xl
-        "
-      >
-        <SiDjango className="text-green-400" />
-        <SiPostgresql className="text-blue-400" />
+        <p className="text-xs font-semibold tracking-[0.2em] text-blue-300 uppercase">
+          Approche de développement
+        </p>
+        <div className="mt-5 space-y-4">
+          {architecture.map(({ title, detail, Icon, color }, index) => (
+            <div key={title}>
+              <div className="flex items-center gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5">
+                  <Icon className={`text-xl ${color}`} />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="font-semibold text-white">{title}</p>
+                  <p className="text-sm text-slate-400">{detail}</p>
+                </div>
+              </div>
+              {index < architecture.length - 1 && <div className="ml-4 mt-1 text-lg leading-none text-blue-400" aria-hidden="true">↓</div>}
+            </div>
+          ))}
+        </div>
       </motion.div>
     </motion.div>
   );

@@ -3,15 +3,15 @@ export const profile = {
 
   greeting: "Bonjour 👋 Je suis",
 
-  title: "Développeur Full Stack",
+  title: "Développeur Full Stack spécialisé en React, Django, Python et PostgreSQL.",
 
-  description:
-    "Je conçois des applications web modernes, performantes et évolutives en transformant des besoins métiers en solutions numériques.",
+  availability:
+    "Disponible pour un CDI, des missions freelance et des collaborations sur des projets web.",
 
   stack: [
-    "Python",
-    "Django",
     "React",
+    "Django",
+    "Python",
     "PostgreSQL"
   ],
 

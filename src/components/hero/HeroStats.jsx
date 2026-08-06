@@ -1,28 +1,11 @@
 import { motion } from "framer-motion";
 
-const stats = [
-  {
-    value: "1+",
-    label: "SaaS développé",
-  },
-  {
-    value: "8+",
-    label: "Modules métier",
-  },
-  {
-    value: "REST",
-    label: "API sécurisée",
-  },
-  {
-    value: "React",
-    label: "Django • PostgreSQL",
-  },
-];
+const HeroStats = ({ items = [], className = "" }) => {
+  if (items.length === 0) return null;
 
-const HeroStats = () => {
   return (
-    <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
-      {stats.map((item, index) => (
+    <div className={`mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4 ${className}`}>
+      {items.map((item, index) => (
         <motion.div
           key={item.label}
           initial={{ opacity: 0, y: 25 }}
@@ -38,11 +21,9 @@ const HeroStats = () => {
             backdrop-blur
           "
         >
-          <div className="text-2xl font-bold text-blue-400">
-            {item.value}
-          </div>
+          {item.value && <div className="text-2xl font-bold text-blue-400">{item.value}</div>}
 
-          <div className="mt-2 text-sm text-slate-300">
+          <div className={`${item.value ? "mt-2" : ""} text-sm text-slate-300`}>
             {item.label}
           </div>
         </motion.div>

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import HeroStats from "../../components/hero/HeroStats";
 import { profile } from "../../data/profile";
 import { trackCVDownload, trackProjectsView } from "../../utils/analytics";
 
@@ -11,26 +10,19 @@ const HeroContent = () => {
       transition={{ duration: 0.8 }}
     >
       <p className="font-medium tracking-widest uppercase text-blue-400">
-        {profile.greeting}
+        {profile.name} · Développeur Full Stack
       </p>
 
-      <h1 className="mt-5 text-5xl font-extrabold leading-tight text-white lg:text-6xl">
-        {profile.name}
+      <h1 className="mt-5 max-w-3xl text-5xl font-extrabold leading-[1.08] text-white lg:text-6xl">
+        Je conçois des applications web modernes, fiables et évolutives.
       </h1>
 
-      <h2 className="mt-6 text-2xl font-semibold text-slate-300 lg:text-3xl">
-        Développeur Full Stack
-        <span className="text-blue-500">
-          {" "}React • Django • PostgreSQL
-        </span>
+      <h2 className="mt-6 max-w-2xl text-xl font-semibold leading-relaxed text-blue-300 lg:text-2xl">
+        {profile.title}
       </h2>
 
       <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-400">
-        Je conçois des plateformes SaaS modernes permettant
-        d'automatiser des processus métier complexes.
-        Mon objectif est de développer des applications
-        performantes, sécurisées et évolutives offrant une
-        excellente expérience utilisateur.
+        Je développe des interfaces modernes, des API robustes et des applications performantes, en mettant l'accent sur la qualité du code, la sécurité et l'expérience utilisateur.
       </p>
 
       <div className="mt-10 flex flex-wrap gap-4">
@@ -71,9 +63,11 @@ const HeroContent = () => {
         </a>
       </div>
 
-      <HeroStats />
+      <p className="mt-6 max-w-2xl text-sm leading-6 text-slate-300">
+        {profile.availability}
+      </p>
 
-      <div className="mt-12 flex flex-wrap gap-3">
+      <div className="mt-8 flex flex-wrap gap-3" aria-label="Technologies principales">
         {profile.stack.map((tech) => (
           <span
             key={tech}
