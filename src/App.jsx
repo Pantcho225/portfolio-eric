@@ -10,6 +10,7 @@ import Contact from "./sections/Contact/Contact"
 
 
 import Footer from "./components/layout/Footer"
+import AnalyticsConsent from "./components/common/AnalyticsConsent"
 
 
 
@@ -43,6 +44,7 @@ function App() {
 
 
       <Footer />
+      <AnalyticsConsent />
 
     </>
 

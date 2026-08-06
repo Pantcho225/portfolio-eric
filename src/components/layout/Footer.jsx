@@ -1,6 +1,6 @@
 import { ChevronUp, Heart, Mail, MapPin } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
-import { trackGithubClick, trackEmailClick } from "../../utils/analytics";
+import { resetAnalyticsConsent, trackGithubClick, trackEmailClick } from "../../utils/analytics";
 
 const Footer = () => {
   return (
@@ -128,6 +128,24 @@ const Footer = () => {
             Tous droits réservés.
 
           </p>
+
+          <a
+            href="/politique-de-confidentialite.html"
+            className="text-sm text-slate-400 transition hover:text-blue-400"
+          >
+            Politique de confidentialité
+          </a>
+
+          <button
+            type="button"
+            onClick={() => {
+              resetAnalyticsConsent();
+              window.location.reload();
+            }}
+            className="text-sm text-slate-400 transition hover:text-blue-400"
+          >
+            Gérer les cookies
+          </button>
 
           <a
             href="#accueil"

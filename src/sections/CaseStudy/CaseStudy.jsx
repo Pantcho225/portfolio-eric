@@ -10,8 +10,10 @@ import CaseStudyStats from "./CaseStudyStats";
 import CaseStudyTimeline from "./CaseStudyTimeline";
 
 const CaseStudy = () => {
+  useEffect(() => {
+    trackCaseStudyView();
+  }, []);
 
-  trackCaseStudyView();
   return (
     <section
       id="etude-de-cas"
@@ -40,3 +42,4 @@ const CaseStudy = () => {
 };
 
 export default CaseStudy;
+import { useEffect } from "react";
